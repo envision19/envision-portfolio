@@ -83,35 +83,41 @@ function App() {
             {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
           </button>
         </div>
+        </nav>
 
         {/* MOBILE MENU */}
                 <div 
-            className={`fixed inset-0 bg-[#FAFAFA] z-[100] transition-all duration-500 ease-in-out md:hidden flex flex-col items-center justify-center
-              ${isMenuOpen 
-                ? 'translate-y-0 opacity-100 pointer-events-auto' 
-                : '-translate-y-full opacity-0 pointer-events-none invisible'
-              }`}
-              style={{ backgroundColor: '#FAFAFA' }}
-          >
-            <div className="flex flex-col items-center space-y-10 text-3xl font-black tracking-tighter">
-              {['HOME', 'PROJECTS', 'SERVICES', 'CONTACT'].map((item) => (
-                <a 
-                  key={item}
-                  href={item === 'HOME' ? '#' : `#${item.toLowerCase()}`} 
-                  onClick={() => setIsMenuOpen(false)}
-                  className="hover:text-emerald-500 transition-colors duration-300"
-                >
-                  {item}
-                </a>
-              ))}
-            </div>
-
-            {/* Decorative element*/}
-            <div className="absolute bottom-10 text-[10px] font-black tracking-[0.3em] text-slate-300 uppercase">
-              Envision Portfolio 2026
-            </div>
+          className={`fixed inset-0 z-[150] flex flex-col items-center justify-center transition-all duration-500 ease-in-out md:hidden
+            ${isMenuOpen 
+              ? 'translate-y-0 opacity-100 visible' 
+              : '-translate-y-full opacity-0 invisible pointer-events-none'
+            }`}
+          style={{ 
+            backgroundColor: '#FAFAFA', // Absolute fallback
+            height: '100vh', 
+            width: '100vw' 
+          }}
+        >
+          <div className="flex flex-col items-center space-y-10 text-3xl font-black tracking-tighter text-slate-900">
+            {['HOME', 'PROJECTS', 'SERVICES', 'CONTACT'].map((item) => (
+              <a 
+                key={item}
+                href={item === 'HOME' ? '#' : `#${item.toLowerCase()}`} 
+                onClick={() => setIsMenuOpen(false)}
+                className="hover:text-emerald-500 transition-colors duration-300"
+              >
+                {item}
+              </a>
+            ))}
           </div>
-        </nav>
+
+          <div className="absolute bottom-10 text-[10px] font-black tracking-[0.3em] text-slate-300 uppercase">
+            Envision Portfolio 2026
+          </div>
+          </div>
+         
+       
+                
 
       {/* HERO SECTION */}
       <section className="max-w-7xl mx-auto px-6 md:px-10 py-12 md:py-20 flex flex-col lg:flex-row items-center justify-between">
