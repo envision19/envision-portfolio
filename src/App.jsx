@@ -63,7 +63,7 @@ function App() {
     <div className="text-slate-900 bg-[#FAFAFA] font-['Inter',_sans-serif] overflow-x-hidden">
       
       {/* NAVBAR */}
-      <nav className="flex justify-between items-center px-6 md:px-10 py-6 sticky top-0 bg-white/80 backdrop-blur-md z-50">
+            <nav className="flex justify-between items-center px-6 md:px-10 py-6 sticky top-0 bg-white/80 backdrop-blur-md z-[100]">
         <div className="text-2xl font-bold tracking-tighter text-emerald-600">ENVISION</div>
         
         <div className="hidden md:flex space-x-8 font-medium text-sm uppercase tracking-widest text-slate-600">
@@ -74,21 +74,43 @@ function App() {
 
         <div className="flex items-center gap-4">
           <a href="#contact" className="hidden sm:block bg-emerald-500 text-white px-6 py-2 rounded-full font-bold hover:bg-emerald-600 transition shadow-lg shadow-emerald-200">CONTACT</a>
-          <button className="md:hidden p-2 text-slate-600" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+          
+          {/* Hamburger Button */}
+          <button 
+            className="md:hidden p-2 text-slate-600 z-[110] relative" 
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+          >
             {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
           </button>
         </div>
 
         {/* MOBILE MENU */}
-        <div className={`fixed inset-0 bg-white z-40 transition-transform duration-300 transform ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'} md:hidden`}>
-          <div className="flex flex-col items-center justify-center h-full space-y-8 text-2xl font-black tracking-tighter">
-            <a href="#" onClick={() => setIsMenuOpen(false)}>HOME</a>
-            <a href="#projects" onClick={() => setIsMenuOpen(false)}>PROJECTS</a>
-            <a href="#services" onClick={() => setIsMenuOpen(false)}>SERVICES</a>
-            <a href="#contact" onClick={() => setIsMenuOpen(false)} className="text-emerald-500">CONTACT</a>
+                <div 
+            className={`fixed inset-0 bg-[#FAFAFA] z-[100] transition-all duration-500 ease-in-out md:hidden flex flex-col items-center justify-center
+              ${isMenuOpen 
+                ? 'translate-y-0 opacity-100 pointer-events-auto' 
+                : '-translate-y-full opacity-0 pointer-events-none invisible'
+              }`}
+          >
+            <div className="flex flex-col items-center space-y-10 text-3xl font-black tracking-tighter">
+              {['HOME', 'PROJECTS', 'SERVICES', 'CONTACT'].map((item) => (
+                <a 
+                  key={item}
+                  href={item === 'HOME' ? '#' : `#${item.toLowerCase()}`} 
+                  onClick={() => setIsMenuOpen(false)}
+                  className="hover:text-emerald-500 transition-colors duration-300"
+                >
+                  {item}
+                </a>
+              ))}
+            </div>
+
+            {/* Decorative element*/}
+            <div className="absolute bottom-10 text-[10px] font-black tracking-[0.3em] text-slate-300 uppercase">
+              Envision Portfolio 2026
+            </div>
           </div>
-        </div>
-      </nav>
+        </nav>
 
       {/* HERO SECTION */}
       <section className="max-w-7xl mx-auto px-6 md:px-10 py-12 md:py-20 flex flex-col lg:flex-row items-center justify-between">
