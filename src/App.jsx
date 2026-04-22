@@ -91,6 +91,7 @@ function App() {
                 ? 'translate-y-0 opacity-100 pointer-events-auto' 
                 : '-translate-y-full opacity-0 pointer-events-none invisible'
               }`}
+              style={{ backgroundColor: '#FAFAFA' }}
           >
             <div className="flex flex-col items-center space-y-10 text-3xl font-black tracking-tighter">
               {['HOME', 'PROJECTS', 'SERVICES', 'CONTACT'].map((item) => (
