@@ -4,7 +4,7 @@ import {
   Search, PenTool, Code, Rocket, ChevronDown, ChevronUp, 
   Globe, Github, Zap, MousePointer2, Menu, X 
 } from 'lucide-react';
-import project1Img from "./productimg";
+import projectimg from "./productimg";
 import project2Img from "./project2Img.png";
 
 function App() {
