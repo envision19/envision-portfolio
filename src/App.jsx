@@ -4,7 +4,7 @@ import {
   Search, PenTool, Code, Rocket, ChevronDown, ChevronUp, 
   Globe, Github, Zap, MousePointer2, Menu, X 
 } from 'lucide-react';
-import project1Img from "./project1Img.png";
+import project1Img from "./productimg";
 import project2Img from "./project2Img.png";
 
 function App() {
@@ -25,8 +25,8 @@ function App() {
     {
       id: 2,
       title: "Minimalist E-Commerce Hub",
-      tech: "React • Node.js • State Management",
-      img: project1Img,
+      tech: "React • Twailwind • State Management",
+      img: productimg.png,
       type: "live_website",
       link: "https://envision-sample-project.vercel.app"
     },
