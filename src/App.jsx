@@ -4,8 +4,9 @@ import {
   Search, PenTool, Code, Rocket, ChevronDown, ChevronUp, 
   Globe, Github, Zap, MousePointer2, Menu, X 
 } from 'lucide-react';
-import projectimg from "./productimg";
-import project2Img from "./project2Img.png";
+import ecomMockup3D from "./ecom-mockup-3d.png";
+import ecomMockup1ST from "./ecom-mockup-1st.png";
+
 
 function App() {
   const [status, setStatus] = useState("");
@@ -18,7 +19,7 @@ function App() {
       id: 1,
       title: "Bespoke Digital Experiences",
       tech: "React • Tailwind • High Performance",
-      img: project2Img,
+      img: ecomMockup1ST,
       type: "expandable",
       details: "This project focuses on crafting a seamless, distraction-free shopping journey. By utilizing React's state management and Tailwind's minimalist design patterns, I achieved a high-performance interface that prioritizes product visuality and sub-100ms navigation."
     },
@@ -26,7 +27,7 @@ function App() {
       id: 2,
       title: "Minimalist E-Commerce Hub",
       tech: "React • Twailwind • State Management",
-      img: productimg.png,
+      img: ecomMockup3D,
       type: "live_website",
       link: "https://envision-sample-project.vercel.app"
     },
