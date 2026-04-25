@@ -26,7 +26,7 @@ function App() {
     {
       id: 2,
       title: "Minimalist E-Commerce Hub",
-      tech: "React • Twailwind • State Management",
+      tech: "React • Tailwind • State Management",
       img: ecomMockup3D,
       type: "live_website",
       link: "https://envision-sample-project.vercel.app"
